@@ -22,7 +22,7 @@ function showEssayResults() {
 }
 
 // Restart essay level
-function restartEssayLevel() {
+function restartLevel3() {
     document.getElementById('quiz-container').style.display = 'block';
     essayResultContainer.style.display = 'none';
     essayInput.value = '';

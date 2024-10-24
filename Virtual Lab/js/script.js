@@ -18,7 +18,7 @@ const questionsLevel1 = [
         ]
     },
     {
-        question: "What is the capital of France?",
+        question: "Which is the correct sentence?",
         answers: [
             { text: 'She is a teacher.', correct: true },
             { text: 'She are a teacher.', correct: false },
@@ -78,54 +78,30 @@ function loadQuestion() {
     updateProgressBar();
 }
 
-// Handle answer selection
+// Handle answer selection without changing the color
 function selectAnswer(e) {
     selectedAnswer = e.target;
     Array.from(answerButtons.children).forEach(button => {
-        button.classList.remove('selected');  // Reset selection state
+        button.classList.remove('selected');
     });
-    selectedAnswer.classList.add('selected');  // Highlight selected button
+    selectedAnswer.classList.add('selected');
 }
 
-// Handle submit after selecting an answer
-submitButton.addEventListener('click', () => {
-    if (selectedAnswer) {
-        const correct = selectedAnswer.dataset.correct === "true";
-        
 // Prevent showing color change until submit is clicked
 submitButton.addEventListener('click', () => {
     if (selectedAnswer) {
         const correct = selectedAnswer.dataset.correct === "true";
         if (correct) {
             selectedAnswer.style.backgroundColor = 'green';
-            correctAnswers++;
         } else {
             selectedAnswer.style.backgroundColor = 'red';
         }
 
         Array.from(answerButtons.children).forEach(button => {
-            button.disabled = true;  // Disable further selections
-        });
-
-        setTimeout(() => {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < totalQuestions) {
-                loadQuestion();
-            } else {
-                showResults();
+            button.disabled = true; // Disable further selections
+            if (button !== selectedAnswer) {
+                button.style.backgroundColor = '#e1f5fe'; // Reset other buttons to default
             }
-        }, 1000);
-    } else {
-        alert("Please select an answer before submitting.");
-    }
-});
-
-        if (correct) {
-            correctAnswers++;
-        }
-
-        Array.from(answerButtons.children).forEach(button => {
-            button.disabled = true;  // Disable further selections
         });
 
         setTimeout(() => {
@@ -151,7 +127,7 @@ function resetState() {
 
 // Update progress bar
 function updateProgressBar() {
-    const progressPercentage = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+    const progressPercentage = (currentQuestionIndex / totalQuestions) * 100;
     progressBar.style.width = progressPercentage + '%';
 }
 
@@ -159,6 +135,7 @@ function updateProgressBar() {
 function showResults() {
     questionContainer.style.display = 'none';
     resultContainer.style.display = 'block';
+    progressBar.style.d = 'none';
     resultText.innerText = `You answered ${correctAnswers} out of ${totalQuestions} questions correctly.`;
 }
 

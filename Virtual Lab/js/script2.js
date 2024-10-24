@@ -1,7 +1,7 @@
 const questionsLevel2 = [
     {
         question: "What is the capital of France?",
-        options: ["Paris", "Rome", "Berlin", "Madrid"], // 4 opsi jawaban
+        options: ["Paris", "Rome", "Berlin", "Madrid"], 
         correctAnswer: "Paris"
     },
     {
@@ -107,7 +107,7 @@ function showDragResults() {
 }
 
 // Restart the level
-function restartDragLevel() {
+function restartLevel2() {
     currentDragQuestionIndex = 0;
     correctDragAnswers = 0;
     dragQuestionContainer.style.display = 'block';
