@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2 - Drag and Drop</title>
+    <link rel="stylesheet" href="css/quiz-styles.css"> <!-- CSS untuk styling kuis -->
+</head>
+<body>
+    <header>
+        <h1>Drag and Drop Quiz - Level 2</h1>
+    </header>
+
+    <div id="quiz-container">
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+        <h2 id="question">Loading question...</h2>
+        
+        <div id="drag-options" class="grid-answers">
+            <!-- Drag items will be injected here by JavaScript -->
+        </div>
+
+        <div id="drop-area" class="drop-area">
+            Drop your answer here
+        </div>
+    </div>
+
+    <div id="result-container" style="display:none;">
+        <h2>Quiz Completed!</h2>
+        <p id="result-text"></p>
+        <button onclick="restartDragLevel()">Retry Level</button>
+        <button onclick="goToTryCourse()">Go to Try Course</button>
+    </div>
+
+    <script src="js/script2.js"></script> <!-- Memanggil script JavaScript -->
+</body>
+</html>

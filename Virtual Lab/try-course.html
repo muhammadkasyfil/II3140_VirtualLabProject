@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Try interactive English courses with quizzes and lessons.">
+    <title>Try a Course - StudyLad</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <h1>StudyLad</h1>
+                </div>
+                <ul>
+                    <a href="index.html">Home</a></li>
+                    <a href="try-course.html">Try a Course</a></li>
+                    <a href="video.html">Videos</a></li>
+                </ul>
+                <div class="cta">
+                    <a href="index.html" class="btn">Back to Home</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-intro">
+            <h2>Start Learning English</h2>
+            <p>Select a level and begin your learning journey. Answer the quiz after each section to test your knowledge.</p>
+        </section>
+
+        <!-- Course Levels -->
+        <section>
+            <h2>Select a Quiz Level</h2>
+            <button onclick="startLevel('level1.html')">Start Level 1</button>
+            <button onclick="startLevel('level2.html')">Start Level 2</button>
+            <button onclick="startLevel('level3.html')">Start Level 3</button>
+        </section>
+    
+        <script>
+            // Function to set access flag and navigate to a level
+            function startLevel(level) {
+                sessionStorage.setItem('tryCourseAccessed', 'true');
+                window.location.href = level;
+            }
+        </script>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h1>StudyLad</h1>
+                <p>Helping you learn English in an interactive way.</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="try-course.html">Try a Course</a></li>
+                    <li><a href="video.html">Videos</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon">F</a>
+                <a href="#" class="social-icon">T</a>
+                <a href="#" class="social-icon">I</a>
+            </div>
+        </div>
+        <p>&copy; 2024 StudyLad. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        // Set a flag when try-course is accessed
+        sessionStorage.setItem('tryCourseAccessed', 'true');
+    </script>
+    </body>
+    
+    
+</html>
