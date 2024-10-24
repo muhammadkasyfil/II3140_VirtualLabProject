@@ -24,7 +24,7 @@ header {
     color: white;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex; /* Ubah menjadi flexbox */
+    display: flex; 
     justify-content: space-between;
     align-items: center;
 }
@@ -49,7 +49,7 @@ header {
 }
 
 .cta {
-    margin-left: auto; /* Memastikan berada di sisi kanan */
+    margin-left: auto; 
 }
 
 .navbar .cta {
@@ -194,7 +194,7 @@ header {
 
 .testimonial-item p:last-child {
     font-size: 1.5rem;
-    color: #FFD700; /* Gold color for the star ratings */
+    color: #FFD700; 
 }
 
 
@@ -418,9 +418,9 @@ textarea {
 /* Video Grid */
 .video-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Satu kolom */
+    grid-template-columns: 1fr; 
     gap: 20px;
-    justify-items: center; /* Video berada di tengah */
+    justify-items: center; 
 }
 
 .video-item {
@@ -568,8 +568,8 @@ button.answer {
 
 /* Footer Social: Resize social media icons */
 .footer-social img {
-    width: 40px; /* Adjust the size to be smaller */
-    height: 40px; /* Maintain proportion */
+    width: 40px; 
+    height: 40px; 
 }
 
 /* Typography improvements */

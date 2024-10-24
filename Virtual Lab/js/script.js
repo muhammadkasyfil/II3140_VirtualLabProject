@@ -98,9 +98,9 @@ submitButton.addEventListener('click', () => {
         }
 
         Array.from(answerButtons.children).forEach(button => {
-            button.disabled = true; // Disable further selections
+            button.disabled = true; 
             if (button !== selectedAnswer) {
-                button.style.backgroundColor = '#e1f5fe'; // Reset other buttons to default
+                button.style.backgroundColor = '#e1f5fe'; 
             }
         });
 
@@ -135,7 +135,7 @@ function updateProgressBar() {
 function showResults() {
     questionContainer.style.display = 'none';
     resultContainer.style.display = 'block';
-    progressBar.style.d = 'none';
+    progressBar.style.display = 'none';  
     resultText.innerText = `You answered ${correctAnswers} out of ${totalQuestions} questions correctly.`;
 }
 
@@ -145,6 +145,7 @@ function restartLevel() {
     correctAnswers = 0;
     questionContainer.style.display = 'block';
     resultContainer.style.display = 'none';
+    progressBar.style.display = 'block';  
     loadQuestion();
 }
 

@@ -46,7 +46,7 @@ function loadDragQuestion() {
         dragItem.classList.add('drag-item');
         dragItem.innerText = option;
         dragItem.draggable = true;
-        dragItem.dataset.correct = option === currentDragQuestion.correctAnswer; // Tandai jawaban benar
+        dragItem.dataset.correct = option === currentDragQuestion.correctAnswer; 
         dragItem.addEventListener('dragstart', handleDragStart);
         dragOptionsContainer.appendChild(dragItem);
     });
@@ -56,27 +56,25 @@ function loadDragQuestion() {
 
 // Handle dragging and dropping
 function handleDragStart(e) {
-    e.dataTransfer.setData('text', e.target.innerText);  // Mengambil teks dari item yang di-drag
+    e.dataTransfer.setData('text', e.target.innerText);  
 }
 
 function handleDragOver(e) {
-    e.preventDefault();  // Mengizinkan drop
+    e.preventDefault();  
 }
 
 function handleDrop(e) {
-    e.preventDefault();  // Mencegah perilaku default saat drop
-    const draggedAnswer = e.dataTransfer.getData('text');  // Mengambil jawaban yang di-drag
-    const correctAnswer = questionsLevel2[currentDragQuestionIndex].correctAnswer;  // Mendapatkan jawaban yang benar
+    e.preventDefault();  
+    const draggedAnswer = e.dataTransfer.getData('text');  
+    const correctAnswer = questionsLevel2[currentDragQuestionIndex].correctAnswer; 
 
-    // Cek apakah jawaban yang di-drag benar atau salah
     if (draggedAnswer === correctAnswer) {
-        dropArea.style.backgroundColor = 'green';  // Warna hijau untuk jawaban benar
+        dropArea.style.backgroundColor = 'green';  
         correctDragAnswers++;
     } else {
-        dropArea.style.backgroundColor = 'red';  // Warna merah untuk jawaban salah
+        dropArea.style.backgroundColor = 'red';  
     }
 
-    // Pindah ke soal berikutnya setelah jeda singkat
     setTimeout(() => {
         currentDragQuestionIndex++;
         if (currentDragQuestionIndex < totalDragQuestions) {
@@ -89,8 +87,8 @@ function handleDrop(e) {
 
 // Reset state for the next question
 function resetDragState() {
-    dragOptionsContainer.innerHTML = '';  // Menghapus opsi drag sebelumnya
-    dropArea.style.backgroundColor = '';  // Menghapus warna latar belakang dari drop area
+    dragOptionsContainer.innerHTML = '';  
+    dropArea.style.backgroundColor = '';  
 }
 
 // Update progress bar
@@ -103,6 +101,7 @@ function updateDragProgressBar() {
 function showDragResults() {
     dragQuestionContainer.style.display = 'none';
     dragResultContainer.style.display = 'block';
+    dragProgressBar.style.display = 'none'; 
     dragResultText.innerText = `You answered ${correctDragAnswers} out of ${totalDragQuestions} correctly.`;
 }
 
@@ -112,6 +111,7 @@ function restartLevel2() {
     correctDragAnswers = 0;
     dragQuestionContainer.style.display = 'block';
     dragResultContainer.style.display = 'none';
+    dragProgressBar.style.display = 'block';  
     loadDragQuestion();
 }
 
@@ -126,5 +126,5 @@ window.onload = () => {
 };
 
 // Attach dragover and drop event listeners to the drop area
-dropArea.addEventListener('dragover', handleDragOver);  // Mengizinkan drop
-dropArea.addEventListener('drop', handleDrop);  // Menangani drop
+dropArea.addEventListener('dragover', handleDragOver);  
+dropArea.addEventListener('drop', handleDrop);  

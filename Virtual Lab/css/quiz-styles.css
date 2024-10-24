@@ -3,9 +3,9 @@ header {
     background-color: #0056b3;
     color: white;
     padding: 20px;
-    text-align: left; /* Adjust header to the top-left */
+    text-align: left; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Ensure header stays at the top */
+    position: fixed; 
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -17,8 +17,8 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full page height minus header */
-    padding-top: 100px; /* Account for fixed header height */
+    height: 100vh; 
+    padding-top: 100px; 
 }
 
 /* Grid layout for questions and answers */
@@ -27,13 +27,13 @@ header {
     padding: 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-    width: 60%; /* Adjusted width for more readability */
+    width: 60%; 
     text-align: center;
 }
 
 .grid-answers {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns for a cleaner layout */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 15px;
     margin-top: 20px;
 }
@@ -84,11 +84,11 @@ header {
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .grid-container {
-        width: 90%; /* Make container responsive */
+        width: 90%; 
     }
 
     .grid-answers {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
+        grid-template-columns: 1fr; 
     }
 }
 
