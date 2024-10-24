@@ -15,9 +15,9 @@
                     <h1>StudyLad</h1>
                 </div>
                 <ul>
-                    <a href="index.html">Home</a></li>
-                    <a href="try-course.html">Course</a></li>
-                    <a href="video.html">Videos</a></li>
+                    <a href="index.html">Home</a>
+                    <a href="try-course.html">Course</a>
+                    <a href="video.html">Videos</a>
                 </ul>
                 <div class="cta">
                     <a href="index.html" class="btn">Back to Home</a>
@@ -31,13 +31,15 @@
             <h2>Start Learning English</h2>
             <p>Select a level and begin your learning journey. Answer the quiz after each section to test your knowledge.</p>
         </section>
-
-        <!-- Course Levels -->
-        <section>
+    
+        <!-- Course Levels with Grid -->
+        <section class="course-grid">
             <h2>Select a Quiz Level</h2>
-            <button onclick="startLevel('level1.html')">Start Level 1</button>
-            <button onclick="startLevel('level2.html')">Start Level 2</button>
-            <button onclick="startLevel('level3.html')">Start Level 3</button>
+            <div class="level-grid">
+                <button onclick="startLevel('level1.html')">Start Level 1</button>
+                <button onclick="startLevel('level2.html')">Start Level 2</button>
+                <button onclick="startLevel('level3.html')">Start Level 3</button>
+            </div>
         </section>
     
         <script>
@@ -48,6 +50,22 @@
             }
         </script>
     </main>
+
+    <style>
+        /* Grid for the quiz level buttons */
+        .level-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            justify-items: center;
+        }
+    
+        /* Center text and adjust typography */
+        .course-intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
 
     <!-- Footer -->
     <footer class="footer">
