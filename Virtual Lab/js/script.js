@@ -91,7 +91,35 @@ function selectAnswer(e) {
 submitButton.addEventListener('click', () => {
     if (selectedAnswer) {
         const correct = selectedAnswer.dataset.correct === "true";
-        selectedAnswer.style.backgroundColor = correct ? 'green' : 'red';
+        
+// Prevent showing color change until submit is clicked
+submitButton.addEventListener('click', () => {
+    if (selectedAnswer) {
+        const correct = selectedAnswer.dataset.correct === "true";
+        if (correct) {
+            selectedAnswer.style.backgroundColor = 'green';
+            correctAnswers++;
+        } else {
+            selectedAnswer.style.backgroundColor = 'red';
+        }
+
+        Array.from(answerButtons.children).forEach(button => {
+            button.disabled = true;  // Disable further selections
+        });
+
+        setTimeout(() => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < totalQuestions) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }, 1000);
+    } else {
+        alert("Please select an answer before submitting.");
+    }
+});
+
         if (correct) {
             correctAnswers++;
         }
